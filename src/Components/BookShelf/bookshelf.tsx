@@ -24,11 +24,15 @@ const BookShelf: React.FC<BookShelfProps> = ({ category, endpoint }) => {
     navigate(`/book/${id}`, { state: { from: location.pathname } });
   };
 
+  const handleViewMoreClick = () => {
+    navigate(`/category/${category}`, { state: { from: location.pathname } });
+  };
+
   return (
     <div className={styles.shelf}>
       <div className={styles.header}>
         <h2>{category}</h2>
-        <button className={styles.viewMore}>Ver mais</button>
+        <button className={styles.viewMore} onClick={handleViewMoreClick}>Ver mais</button>
       </div>
       <div className={styles.books}>
         {books && books.length > 0 ? (
