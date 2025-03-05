@@ -1,21 +1,11 @@
-import { useParams, useLocation, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import useBook from '../../Hooks/useBook';
 import styles from './styles.module.css';
-import arrow from '../../assets/returnIcon.png';
+import ReturnArrow from '../../Components/ReturnArrow/returnarrow';
 
 export default function Book() {
     const { id } = useParams<{ id: string }>();
     const { book, loading, error } = useBook('http://localhost:3001/livros', Number(id));
-    const location = useLocation();
-    const navigate = useNavigate();
-
-    const handleBackClick = () => {
-        if (location.state && location.state.from) {
-            navigate(location.state.from);
-        } else {
-            navigate('/');
-        }
-    };
 
     if (loading) {
         return <p>Carregando...</p>;
@@ -32,7 +22,7 @@ export default function Book() {
     return (
         <>
             <div className={styles.header}>
-                <img className={styles.returnArrow} src={arrow} alt="return-Arrow-Icon" onClick={handleBackClick} style={{ cursor: 'pointer' }} />
+                <ReturnArrow/>
                 <h1>Detalhes do livro</h1>
             </div>
             <div className={styles.bookDetails}>
