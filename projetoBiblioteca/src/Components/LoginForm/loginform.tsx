@@ -55,8 +55,8 @@ export default function LoginForm() {
           />
           {errors.password && <p className={styles.error}>{errors.password.message}</p>}
           <div className={styles.btns}></div>
-          <button type="submit">Entrar</button>
-          <button type="button">Cadastre-se</button>
+          <button type="submit" className={styles.loginButton}>Entrar</button>
+          <button type="button" className={styles.registerButton}>Cadastre-se</button>
         </form>
       </div>
     </div>

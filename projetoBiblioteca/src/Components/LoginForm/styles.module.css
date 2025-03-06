@@ -82,7 +82,7 @@ label {
     margin-top: 5rem;
 }
 
-button {
+.loginButton {
     width: 25rem;
     height: 3.75rem;
     font-size: 1.2rem;
@@ -97,11 +97,16 @@ button {
 }
 
 button[type="button"] {
+    width: 25rem;
+    height: 3.75rem;
     font-size: 1.5rem;
     font-weight: 600;
     color: #6251DD;
+    border-radius: 4px;
+    margin-top: 0.8rem;
     background-color: white;
     border: solid 2px #6251DD;
+    cursor: pointer;
 }
 
 .error {
